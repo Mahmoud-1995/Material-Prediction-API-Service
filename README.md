@@ -52,4 +52,15 @@ Checks if the API service is running.
 #### Example Request:
 
 ```bash
-GET /status
+[GET /status](http://innosale.sagresearch.de:8012/status)
+
+#### Example Response:
+{
+  "Status": "Service Running"
+}
+
+### 2. **GET /help**
+Provides information on the materials and arguments accepted by the API service.
+
+#### Example Request:
+[GET /help] (http://innosale.sagresearch.de:8012/help)
