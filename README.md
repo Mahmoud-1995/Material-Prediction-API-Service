@@ -79,6 +79,7 @@ Provides information on the materials and arguments accepted by the API service.
 ```
 ### 3. **calculate**
 Returns the predicted product price over the forecast period based on the input materials and prices.
+
 Parameters:
 - st37: Weight of ST37 in KG
 - copper: Weight of Copper in KG
@@ -90,9 +91,72 @@ Parameters:
 - medium_carbon: Weight of Medium Carbon in KG
 - p_medium_carbon: Spot Price of Medium Carbon
 - p_nodular_cast_iron: Spot Price of Nodular Cast Iron
-nodular_cast_iron: Weight of Nodular Cast Iron in KG
-grey_cast_iron: Weight of Grey Cast Iron in KG
-p_grey_cast_iron: Spot Price of Grey Cast Iron
-nonalloy_cast: Weight of Nonalloy Cast in KG
-p_nonalloy_cast: Spot Price of Nonalloy Cast
-months: Forecasting period in months (optional, default is 24 months)
+- nodular_cast_iron: Weight of Nodular Cast Iron in KG
+- grey_cast_iron: Weight of Grey Cast Iron in KG
+- p_grey_cast_iron: Spot Price of Grey Cast Iron
+- nonalloy_cast: Weight of Nonalloy Cast in KG
+- p_nonalloy_cast: Spot Price of Nonalloy Cast
+- months: Forecasting period in months (optional, default is 24 months)
+
+#### Example Request:
+```bash
+[GET /calculate] (http://innosale.sagresearch.de:8012/calculate?st37=100&p_st37=1500&alu=50&labour=10&months=12)
+
+```
+#### Example Response:
+
+```bash
+  {
+    "ds": "2023-03",
+    "total_product_value": 52300.12
+  },
+  {
+    "ds": "2023-04",
+    "total_product_value": 52045.20
+  },
+  ...
+```
+
+## Running the Service
+### Requirements:
+- Python 3.8+
+- FastAPI
+- NeuralProphet
+- Pandas
+  
+## Installation:
+### 1. Clone the repository:
+```bash
+git clone https://github.com/Mahmoud-1995/Material-Prediction-API-Service.git
+```
+### 2. Install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+### 3. Start the FastAPI server::
+```bash
+python3.8 -m uvicorn main:app --host 10.0.11.20(host ip) --port 8080(port number)
+```
+## How the API Works
+### 1- Input Validation: The API checks if the inputs provided have corresponding values for both weight and spot price. If any spot price is missing while its weight is provided, or vice versa, the API will return a validation error.
+
+### 2- Prediction: The API leverages pre-trained NeuralProphet models to forecast the price of each material over the specified forecast period. The total price is calculated by multiplying the material weight with the forecasted price for that period.
+
+### 3- Output: The API returns a list of predicted product prices for each month in the forecast period, formatted as a time-series.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
