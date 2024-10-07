@@ -53,14 +53,47 @@ Checks if the API service is running.
 
 ```bash
 [GET /status](http://innosale.sagresearch.de:8012/status)
+```
 
 #### Example Response:
+```bash
 {
   "Status": "Service Running"
 }
+```
 
 ### 2. **GET /help**
 Provides information on the materials and arguments accepted by the API service.
 
 #### Example Request:
+```bash
 [GET /help] (http://innosale.sagresearch.de:8012/help)
+```
+#### Example Response:
+```bash
+{
+  "st37": "Weight of ST37 in KG",
+  "p_st37": "Spot price of ST37",
+  ...
+  "months": "Forecasting period in months (default is 24 months)"
+}
+```
+### 3. **GET /calculate**
+Returns the predicted product price over the forecast period based on the input materials and prices.
+Parameters:
+- st37: Weight of ST37 in KG
+- copper: Weight of Copper in KG
+- p_st37: Spot price of ST37
+- p_high_carbon: Spot price of High Carbon
+- alu: Weight of Aluminum in KG
+- labour: Labor hours
+- high_carbon: Weight of High Carbon in KG
+- medium_carbon: Weight of Medium Carbon in KG
+- p_medium_carbon: Spot Price of Medium Carbon
+- p_nodular_cast_iron: Spot Price of Nodular Cast Iron
+nodular_cast_iron: Weight of Nodular Cast Iron in KG
+grey_cast_iron: Weight of Grey Cast Iron in KG
+p_grey_cast_iron: Spot Price of Grey Cast Iron
+nonalloy_cast: Weight of Nonalloy Cast in KG
+p_nonalloy_cast: Spot Price of Nonalloy Cast
+months: Forecasting period in months (optional, default is 24 months)
