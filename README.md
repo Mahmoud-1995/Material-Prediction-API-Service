@@ -13,8 +13,6 @@ This API service provides a price forecasting solution for a product based on th
   - [Calculate](#get-calculate)
 - [Running the Service](#running-the-service)
 - [How the API Works](#how-the-api-works)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
