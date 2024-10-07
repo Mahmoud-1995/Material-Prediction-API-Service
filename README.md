@@ -49,7 +49,7 @@ Checks if the API service is running.
 #### Example Request:
 
 ```bash
-[GET /status](http://innosale.sagresearch.de:8012/status)
+http://innosale.sagresearch.de:8012/status
 ```
 
 #### Example Response:
@@ -59,12 +59,12 @@ Checks if the API service is running.
 }
 ```
 
-### 2. **get-help**
+### 2. **GET /help**
 Provides information on the materials and arguments accepted by the API service.
 
 #### Example Request:
 ```bash
-[GET /help] (http://innosale.sagresearch.de:8012/help)
+http://innosale.sagresearch.de:8012/help
 ```
 #### Example Response:
 ```bash
@@ -75,7 +75,7 @@ Provides information on the materials and arguments accepted by the API service.
   "months": "Forecasting period in months (default is 24 months)"
 }
 ```
-### 3. **calculate**
+### 3. **GET /calculate**
 Returns the predicted product price over the forecast period based on the input materials and prices.
 
 Parameters:
@@ -98,7 +98,7 @@ Parameters:
 
 #### Example Request:
 ```bash
-[GET /calculate] (http://innosale.sagresearch.de:8012/calculate?st37=100&p_st37=1500&alu=50&labour=10&months=12)
+http://innosale.sagresearch.de:8012/calculate?st37=100&p_st37=1500&alu=50&labour=10&months=12
 
 ```
 #### Example Response:
