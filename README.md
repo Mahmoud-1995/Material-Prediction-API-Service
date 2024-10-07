@@ -45,7 +45,7 @@ Users can also specify a forecasting period (`months`) to define how many months
   
 ## Endpoints
 
-### 1. **GET /status**
+### 1. **status**
 
 Checks if the API service is running.
 
@@ -62,7 +62,7 @@ Checks if the API service is running.
 }
 ```
 
-### 2. **GET /help**
+### 2. **help**
 Provides information on the materials and arguments accepted by the API service.
 
 #### Example Request:
@@ -78,7 +78,7 @@ Provides information on the materials and arguments accepted by the API service.
   "months": "Forecasting period in months (default is 24 months)"
 }
 ```
-### 3. **GET /calculate**
+### 3. **calculate**
 Returns the predicted product price over the forecast period based on the input materials and prices.
 Parameters:
 - st37: Weight of ST37 in KG
