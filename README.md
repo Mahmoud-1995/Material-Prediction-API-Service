@@ -45,8 +45,7 @@ Users can also specify a forecasting period (`months`) to define how many months
   
 ## Endpoints
 
-### 1. Status
-
+### 1. **GET /status**
 Checks if the API service is running.
 
 #### Example Request:
