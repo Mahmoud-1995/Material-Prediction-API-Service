@@ -62,7 +62,7 @@ Checks if the API service is running.
 }
 ```
 
-### 2. **help**
+### 2. **get-help**
 Provides information on the materials and arguments accepted by the API service.
 
 #### Example Request:
