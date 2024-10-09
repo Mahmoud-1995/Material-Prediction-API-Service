@@ -136,11 +136,11 @@ pip install -r requirements.txt
 python3.8 -m uvicorn main:app --host 10.0.11.20(host ip) --port 8080(port number)
 ```
 ## How the API Works
-### 1- Input Validation: The API checks if the inputs provided have corresponding values for both weight and spot price. If any spot price is missing while its weight is provided, or vice versa, the API will return a validation error.
+#### 1- Input Validation: The API checks if the inputs provided have corresponding values for both weight and spot price. If any spot price is missing while its weight is provided, or vice versa, the API will return a validation error.
 
-### 2- Prediction: The API leverages pre-trained NeuralProphet models to forecast the price of each material over the specified forecast period. The total price is calculated by multiplying the material weight with the forecasted price for that period.
+#### 2- Prediction: The API leverages pre-trained NeuralProphet models to forecast the price of each material over the specified forecast period. The total price is calculated by multiplying the material weight with the forecasted price for that period.
 
-### 3- Output: The API returns a list of predicted product prices for each month in the forecast period, formatted as a time-series.
+#### 3- Output: The API returns a list of predicted product prices for each month in the forecast period, formatted as a time-series.
 
 
 
